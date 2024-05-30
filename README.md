@@ -1,38 +1,52 @@
-# Anomalies Detection in API Logs using Spark
+# Anomalies Detection in API-logs using Spark
 
-## Project Overview
-This project aims to develop a Spark application for analyzing Apache Access logs to detect anomalies in API logs. By analyzing various aspects of the log data, such as response codes, traffic patterns, and content size statistics, the application aims to identify potential anomalies and irregularities in the server's behavior.
+## Project Analysis:
 
-## Features
-- **Data Extraction and Cleaning**: Extract information from semi-structured Apache Access logs and clean the data to remove inconsistencies and missing values.
-- **Traffic Analysis**: Analyze traffic patterns to identify unusual spikes or drops in request volume, as well as unusual distribution of response codes.
-- **Content Size Statistics**: Calculate statistics related to content size, including minimum, maximum, and average content size, as well as identifying top endpoints transferring maximum content.
-- **Frequent Visitors**: Identify IP addresses accessing the server more than a specified threshold to detect potential security threats or excessive usage.
-- **Bad Requests Analysis**: Analyze bad requests, including the top latest 404 requests with their endpoints and timestamps, to identify broken links or potential security vulnerabilities.
+### Objective:
+The project aims to develop a robust Spark application for analyzing Apache Access logs, specifically focusing on detecting anomalies in API logs. Leveraging the power of PySpark, it delves into various dimensions such as response codes, traffic patterns, content size statistics, top endpoints, frequent visitors, and bad requests.
 
-## How to Run
-1. **Data Preparation**:
-    - Upload the Apache Access log data to Databricks in CSV format.
-    - Ensure that the log data is structured and contains columns for IP address, timestamp, endpoint, response code, and content size.
+### Methodology:
 
-2. **Notebook Execution**:
-    - Import the provided `AnomalyDetection.dbc` notebook into your Databricks workspace.
-    - Open the notebook and execute each cell sequentially to load, clean, and analyze the log data.
-    - Review the output of each cell to understand the results of the analysis.
+#### Data Preparation:
+1. **Creation of necessary directories and upload of sample log data (sample_logs.csv)**.
 
-3. **View Results**:
-    - After executing the notebook, review the generated visualizations and summary statistics to gain insights into the log data.
-    - Explore the CSV files containing detailed statistics, such as response code counts, frequent IP addresses, and latest 404 requests.
+#### Data Processing and Analysis:
+- Load the log data into a Spark DataFrame.
+- Clean and filter the data to ensure data quality.
+- Conduct basic data exploration to gain insights into the dataset.
+- Analyze trends based on response codes and traffic patterns.
+- Calculate content size statistics and identify top endpoints by content size.
+- Perform in-depth analysis of response codes and anomalies detection.
 
-4. **Further Analysis**:
-    - Modify the notebook as needed to perform additional analysis or customize the existing analysis based on specific requirements or use cases.
-    - Experiment with different Spark transformations and actions to gain deeper insights into the log data.
+#### Output Generation:
+- Save the analysis results into CSV files for further reference and reporting.
 
-## Dependencies
-- Apache Spark: The project requires Apache Spark for distributed data processing and analysis.
-- Databricks: The notebook is designed to run on the Databricks platform for scalable data analysis in the cloud.
+## Project Summary/Explanation:
 
-## Contributor
-- [Sudarshan Poudel](https://github.com/darsan23): Project Developer
+### Overview:
+This project harnesses the capabilities of PySpark within a Databricks notebook to conduct thorough analysis of Apache Access logs. By employing advanced data processing techniques, it extracts actionable insights to detect anomalies in API logs.
+
+### Key Highlights:
+- Comprehensive data exploration, cleaning, and filtering processes.
+- Detailed trend analysis encompassing response codes, traffic patterns, and content size statistics.
+- Identification of frequent visitors, top endpoints, and anomalies such as bad requests.
+- Generation of insightful output in the form of CSV files for further analysis and reporting.
+
+## Reference:
+
+### Framework:
+- PySpark: A powerful distributed data processing engine for large-scale data analytics.
+- Databricks: An integrated platform for data engineering and collaborative data science.
+
+### Documentation:
+- Apache Spark: Official documentation for Apache Spark framework.
+
+## Final Output:
+
+### Analysis Results:
+- **response_code_stats.csv**: Contains detailed statistics on response codes.
+- **frequent_ips.csv**: Provides insights into frequent IP addresses accessing the server.
+- **latest_404_requests.csv**: Lists the latest 404 requests along with their endpoints and timestamps.
+
 
 .
